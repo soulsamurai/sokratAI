@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <meta name="description" content="СократАИ — ИИ-ассистент для самостоятельной работы студентов по сократическому методу">
+  <title>СократАИ — ИИ-ассистент для самостоятельной работы студентов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Auth Page -->
+  <div id="auth-page" class="auth-page">
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <div class="auth-logo">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div>
+            <h1>СократАИ</h1>
+            <p>Учись думать, а не списывать</p>
+          </div>
+        </div>
+        
+        <h2>ИИ-ассистент для <span class="gradient-text">самостоятельной работы</span></h2>
+        <p class="auth-description">Платформа, которая помогает студентам разбираться в материале самостоятельно, используя сократический метод обучения.</p>
+        
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <div>
+              <h3>Сократический метод</h3>
+              <p>ИИ задаёт наводящие вопросы, а не даёт готовые ответы</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div>
+              <h3>Учебные материалы</h3>
+              <p>Структурированная база знаний по предметам</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h3>Умный диалог</h3>
+              <p>Персонализированное обучение через беседу</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="auth-decorative-1"></div>
+      <div class="auth-decorative-2"></div>
+    </div>
+    
+    <div class="auth-right">
+      <div class="auth-form-container">
+        <div class="auth-mobile-logo">
+          <div class="logo-icon small">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h1>СократАИ</h1>
+            <p>Учись думать, а не списывать</p>
+          </div>
+        </div>
+        
+        <div class="auth-card">
+          <h2 id="auth-title">Вход в систему</h2>
+          <p id="auth-subtitle">Войдите, чтобы продолжить обучение</p>
+          
+          <div id="auth-error" class="auth-error hidden"></div>
+          
+          <form id="auth-form">
+            <div id="fullname-field" class="form-group hidden">
+              <label>ФИО</label>
+              <input type="text" id="fullname" placeholder="Иванов Иван Иванович">
+            </div>
+            
+            <div class="form-group">
+              <label>Имя пользователя *</label>
+              <input type="text" id="username" placeholder="student123" required>
+            </div>
+            
+            <div id="email-field" class="form-group hidden">
+              <label>Email</label>
+              <input type="email" id="email" placeholder="student@university.ru">
+            </div>
+            
+            <div id="group-field" class="form-group hidden">
+              <label>Группа</label>
+              <input type="text" id="group" placeholder="ИВТ-21-1">
+            </div>
+            
+            <div class="form-group">
+              <label>Пароль *</label>
+              <div class="password-input">
+                <input type="password" id="password" placeholder="••••••••" required>
+                <button type="button" class="toggle-password" onclick="togglePassword()">
+                  <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-off-icon hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+            </div>
+            
+            <div id="consent-field" class="form-group checkbox-group hidden">
+              <label class="checkbox-label">
+                <input type="checkbox" id="consent">
+                <span>Я согласен(а) на обработку данных и логирование диалогов для улучшения качества сервиса</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn-primary">
+              <span id="auth-btn-text">Войти</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+          
+          <div class="auth-switch">
+            <button type="button" id="auth-switch-btn" onclick="toggleAuthMode()">Нет аккаунта? Зарегистрируйтесь</button>
+          </div>
+          
+          <div class="auth-demo-hint">
+            💡 Для демо: введите любое имя и пароль (≥ 4 символов)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app hidden">
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon small">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h1>СократАИ</h1>
+            <p>Сократический метод</p>
+          </div>
+        </div>
+        <button class="sidebar-close" onclick="closeSidebar()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      
+      <div class="sidebar-user">
+        <div id="user-avatar" class="user-avatar"></div>
+        <div class="user-info">
+          <p id="user-name" class="user-name"></p>
+          <p id="user-group" class="user-group"></p>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-page="dashboard" onclick="navigateTo('dashboard')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Главная
+        </button>
+        <button class="nav-item" data-page="chat" onclick="navigateTo('chat')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          ИИ-ассистент
+          <span class="nav-indicator"></span>
+        </button>
+        <button class="nav-item" data-page="materials" onclick="navigateTo('materials')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Материалы
+        </button>
+        <button class="nav-item" data-page="schedule" onclick="navigateTo('schedule')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Расписание
+        </button>
+        <button class="nav-item" data-page="profile" onclick="navigateTo('profile')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Профиль
+        </button>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="nav-item logout" onclick="logout()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Выйти
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <button class="menu-btn" onclick="openSidebar()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h2 id="page-title">Главная</h2>
+        <div class="header-spacer"></div>
+      </header>
+
+      <!-- Pages -->
+      <div id="page-dashboard" class="page active"></div>
+      <div id="page-chat" class="page chat-page"></div>
+      <div id="page-materials" class="page"></div>
+      <div id="page-schedule" class="page"></div>
+      <div id="page-profile" class="page"></div>
+    </main>
+  </div>
+
+  <!-- AI Settings Modal -->
+  <div id="ai-settings-modal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeAISettings()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <div class="modal-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div>
+            <h2>Настройки ИИ</h2>
+            <p>Подключите API для реальных ответов</p>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeAISettings()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="settings-info">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <p>Введите API ключ, чтобы ИИ-ассистент мог отвечать на ваши вопросы. Сократический метод встроен в системный промпт.</p>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Провайдер API
+          </label>
+          <div class="provider-grid">
+            <button class="provider-btn active" data-provider="openai" onclick="selectProvider('openai')">OpenAI</button>
+            <button class="provider-btn" data-provider="groq" onclick="selectProvider('groq')">Groq</button>
+            <button class="provider-btn" data-provider="openrouter" onclick="selectProvider('openrouter')">OpenRouter</button>
+            <button class="provider-btn" data-provider="together" onclick="selectProvider('together')">Together AI</button>
+            <button class="provider-btn" data-provider="custom" onclick="selectProvider('custom')">Custom</button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            API ключ *
+          </label>
+          <div class="password-input">
+            <input type="password" id="api-key" placeholder="sk-...">
+            <button type="button" class="toggle-password" onclick="toggleApiKeyVisibility()">
+              <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="eye-off-icon hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+          <a id="api-key-link" href="https://platform.openai.com/api-keys" target="_blank" class="api-link">
+            Получить ключ OpenAI
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        
+        <div id="custom-url-field" class="form-group hidden">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Base URL
+          </label>
+          <input type="text" id="api-base-url" placeholder="https://api.example.com/v1">
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            Модель
+          </label>
+          <select id="api-model">
+            <option value="gpt-4o">gpt-4o</option>
+            <option value="gpt-4o-mini">gpt-4o-mini</option>
+            <option value="gpt-4-turbo">gpt-4-turbo</option>
+            <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
+          </select>
+        </div>
+        
+        <div id="api-test-result" class="test-result hidden"></div>
+        
+        <div class="security-note">
+          🔒 API ключ хранится только в вашем браузере (localStorage) и отправляется напрямую к провайдеру API.
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="testApiKey()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Проверить
+        </button>
+        <div class="modal-actions">
+          <button class="btn-text" onclick="closeAISettings()">Отмена</button>
+          <button class="btn-primary" onclick="saveAISettings()">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
